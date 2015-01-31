@@ -219,7 +219,7 @@ def chall_13():
     c1 = get_cookie('A'*(16 - len('email=')) + x)
     c2 = get_cookie('A'*(32 - len('email=&uid=10&role=')))
     c3 = c2[:32] + c1[16:32]
-    print is_admin(c3)
+    assert is_admin(c3)
 
 def chall_14():
     suffix = b64decode('''
